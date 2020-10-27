@@ -1,6 +1,7 @@
 transposed = []
-matrix = [[1, 4, 9], [2, 5, 10], [3, 6, 11], [4, 8, 12]]
+matrix =  [[1, 2], [3,4], [5,6], [7,8]]
 
+#[[1, 2, 3], [4, 5, 6]]
 
 for i in range(len(matrix[0])):
     print(" i ",i)
