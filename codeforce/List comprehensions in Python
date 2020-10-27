@@ -1,0 +1,7 @@
+new_list = [] 
+for item in old_list: 
+	if item%2 == 0: 
+		new_list.append(item*2) 
+we can convert it to a list comprehension like so
+
+new_list = [item*2 for item in old_list if item%2==0] 
