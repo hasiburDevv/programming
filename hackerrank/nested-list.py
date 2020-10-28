@@ -18,7 +18,7 @@ def second_smallest(student):
   uniq_items.sort()    
   return  uniq_items[1]   
 
-print(second_smallest(student))
+print("second_smallest = ",second_smallest(student))
 second_smallest = second_smallest(student) 
 
 
