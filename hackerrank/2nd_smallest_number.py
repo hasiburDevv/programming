@@ -18,3 +18,4 @@ print(second_smallest([20, 19, 19, 20, 21 ]))
 # print(second_smallest([1, 1, 1, 0, 0, 0, 2, -2, -2]))
 # print(second_smallest([2,2]))
 # print(second_smallest([2]))
+
