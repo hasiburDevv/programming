@@ -1,3 +1,4 @@
+'''
 w = int(input())
 
 if 1 <= w <= 100:
@@ -7,4 +8,10 @@ if 1 <= w <= 100:
         print("YES")
     else:
         print("NO")
+'''
 
+num = int(input("enter your number :"))
+number = num//2
+temp = num - number
+if (temp+number) == num: 
+    print(num," = ",temp," + ", number)

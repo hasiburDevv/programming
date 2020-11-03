@@ -4,6 +4,12 @@ student = [['Harsh', 20],['Beria', 20],['Varun', 19],['Kakunami', 19],['Vikas', 
 l = len(student) 
 result = []
 
+
+
+
+
+
+
 def second_smallest(student):
   if (len(student)<2):
     return
