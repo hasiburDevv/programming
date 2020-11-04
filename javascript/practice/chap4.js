@@ -50,6 +50,28 @@ if(!isFound){
 }
 //************************* reverse array ***************************
 var arr3 = [1,2,3,4,5,6]
-for (var i = arr3.length; i>=0; i--){
-    console.log(arr3[i])
+
+for (var i = 0; i < (arr3.length)/2; i++){
+    var temp = arr3[i]
+    arr3[i] = arr3[arr3.length-1-i]
+    arr3[arr3.length-1-i] = temp
 }
+console.log(arr3)//[ 6, 5, 4, 3, 2, 1 ]
+//console.log(arr3.reverse())//[ 6, 5, 4, 3, 2, 1 ]
+//************************* array method ***************************
+var arr4 = [11, 22, 33, 44]
+var arr5 = [55, 66, 77, 88, 99]
+
+console.log(arr4.join(", "))//return a string 11, 22, 33, 44
+var arr5 = arr4.concat(arr5)
+console.log(arr5)//[11, 22, 33, 44, 55, 66, 77, 88, 99]
+console.log(Array.isArray(arr5))//true
+
+var arr6 = Array.from(arr5)
+console.log(arr6)// create a new clone array same as arr5
+//(explain)
+var aa = [1, 2]
+var bb = aa
+bb[0] = 5
+console.log(bb)//[ 5, 2 ]
+console.log(aa)//[ 5, 2 ] --> it will affect aa array also 
