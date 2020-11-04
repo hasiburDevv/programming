@@ -10,8 +10,10 @@ console.log('his age is '+age)//his age is 50
  //ar false = 50
  //console.log(+false)//SyntaxError: Unexpected token 'false'
 //*******************data type*********************
-/*permeative type-> which is given by the javascript
+/*-----------------------------------------------------
+permeative type-> which is given by the javascript
 object type->user defined datatype using permeative 
+-------------------------------------------------------
 let var_name = undefined;
 console.log(+var_name); // returns undefined
 let number = null;*/
