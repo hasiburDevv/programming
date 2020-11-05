@@ -50,7 +50,7 @@ setTimeout(function ()  {
 
 //************************************ Higher order function ************************************
 //************************************ Higher order function ************************************
-
+//akta function ar vitor a argumnent hisabe arekta function pass kora
 //************************************ closure ************************************
 //************************************ closure ************************************
 var num1 = 10
@@ -64,3 +64,30 @@ function a(){
 }
 var abc = a()
 console.dir(abc)//[Function (anonymous)]
+//************************************ callback ************************************
+//************************************ callback ************************************
+function simple (a, b, callB) {
+    var x = a + b//in every case this two sum and sub operation needed. so we abstract them means those operation are hidden to user. but the sum and sub result value niye user ki kaj korbe oita tara define korbe 
+    var y = a - b
+    var result = callB(x, y)
+    return result  
+}
+
+function sum(x , y){
+    return x + y
+}
+
+var result = simple(5, 3, sum)
+console.log(result);//10
+
+var result1 = simple(5, 3, function(x_arg, y_arg) {
+    return x_arg - y_arg 
+})
+console.log(result1);//6
+
+var result3 = simple(5, 3, function(x_arg, y_arg) {
+    return x_arg * y_arg 
+})
+console.log(result3);//16
+//************************************ callback ************************************
+//************************************ callback ************************************
