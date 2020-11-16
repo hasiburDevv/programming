@@ -1,6 +1,6 @@
 //************************* string *************************** 
 var str = 'something'//string literal(explain)using conation, any value assign in a variable called string literal  
-var str2 = String('Something')//  string constructor
+var str2 = new String('Something')//  string constructor
 
 var n = 10
 var str_n = n.toString()// convert anything to string

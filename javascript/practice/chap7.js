@@ -50,7 +50,8 @@ setTimeout(function ()  {
 
 //************************************ Higher order function ************************************
 //************************************ Higher order function ************************************
-//akta function ar vitor a argumnent hisabe arekta function pass kora
+/*1. akta function ar vitor a argumnent hisabe arekta function pass kora
+2. return */
 //************************************ closure ************************************
 //************************************ closure ************************************
 var num1 = 10
@@ -267,3 +268,210 @@ console.log("myMax "+myMax);//45
 
 //************************************ find and findIndex ************************************
 //************************************ find and findIndex ************************************
+
+arr8 = [7, 8, 9, 4, 5, 6, 1, 20, 3]
+
+var result = arr8.find( function (value) {
+    return value === 1
+})
+console.log(result);//1
+
+var result = arr8.findIndex( function (value) {
+    return value === 1
+})
+console.log(result);//6
+//************************************ find implementation ************************************
+function myFind (arr8, cb) {
+    for ( var i = 0; i < arr8.length; i++){
+        if( cb(arr8[i]) ) {
+            return arr8[i]// for find index -->> return i
+        }
+    }
+}
+
+var result = myFind( arr8, function( value ) {
+    return value === 1
+})
+console.log(+result);//1
+
+//************************************ Sort  function ************************************
+//************************************ Sort function ************************************
+
+var persons = [
+    {
+        name: 'Abul',
+        age: 53
+    },
+    {
+        name: 'Bari',
+        age: 23
+    },
+    {
+        name: 'chanchal',
+        age: 30
+    },
+    {
+        name: 'Didrul',
+        age: 33
+    }
+]
+
+var arr9 = [4, 5, 6, 8, 6, -2, 5, 0, -1, 7, 5, -9]
+arr9.sort()
+console.log(arr9);//not correctly sorted when array contain negative values !! [-1, -2, -9, 0, 4, 5,  5,  5, 6, 6, 7,  8]
+
+persons.sort()
+console.log(persons);
+/* not work with the sort method----------------------------------------------------------------------
+[
+  { name: 'Abul', age: 53 },
+  { name: 'Bari', age: 23 },
+  { name: 'chanchal', age: 30 },
+  { name: 'Didrul', age: 33 }
+]*/
+
+//************************************ Sort using callback function ************************************
+//************************************ Sort using callback function ************************************
+
+var arr10 = [4, 5, 6, 8, 6, -2, 5, 0, -1, 7, 5, -9]
+
+arr10.sort( function ( a, b) {
+    if(a > b) {
+        return 1
+    } else if (a < b) {
+        return -1
+    }else {
+        return 0
+    }
+})
+
+console.log(arr10);//[-9, -2, -1, 0, 4, 5,  5,  5, 6, 6, 7,  8]
+
+persons.sort( function ( a, b) {
+    if(a.age > b.age) {
+        return 1
+    } else if (a.age < b.age) {
+        return -1
+    }else {
+        return 0
+    }
+})
+
+console.log(persons);
+/*output-----------------------------------------
+[
+  { name: 'Bari', age: 23 },
+  { name: 'chanchal', age: 30 },
+  { name: 'Didrul', age: 33 },
+  { name: 'Abul', age: 53 }
+]*/
+//************************************ Sort using callback function implementation ************************************
+
+
+//************************************ some using callback function ************************************
+var result4 = arr10.every( function (value) {
+    return value >= 0
+})
+console.log(result4);//false
+
+var result5 = arr10.some( function (value) {
+    return value == 0
+})
+console.log(result5);//true
+//************************************ return ************************************
+//************************************ return ************************************
+
+function greet (msg) {
+    function greeting (name) {
+        return msg+ ", " +name+ "!"
+    }
+    return greeting
+}
+
+var gm = greet("Good Morning")
+var gn = greet("Good Night")
+var hello = greet("Hello")
+
+console.log(typeof gm);//function
+console.log(gm('Shanto'));//Good Morning, Shanto!
+console.log(gn('Hasibur'));//Good Night, Hasibur!
+console.log(hello('Mina'));//Hello, Mina!
+
+//another example--------------------------------------------------------------------------------
+
+/*
+function base (b){
+    function power(n) {
+        var result_ = 1
+        for (var i = 0; i <b; i++) {
+            result_ *= n
+        }
+        return result_
+    }
+    return power 
+}
+*/
+//as base function has only return function. and power didn't call anywhere in the base function we can remove the name 
+function base (b){
+    return function (n) {
+        var result_ = 1
+        for (var i = 0; i <b; i++) {
+            result_ *= n
+        }
+        return result_
+    }
+     
+}
+var base10 = base(10)
+console.log(base10(2));//1024
+
+//************************************ recursive ************************************
+//************************************ recursive ************************************
+
+function sayHi(n){
+    if(n == 0){
+        return 0
+    }
+    console.log(" hi i am calling");
+    sayHi(n-1)
+}
+
+sayHi(10)
+
+//************************************ curring ************************************
+//************************************ curring ************************************
+/* its a higher order function---------its just a organized way of implementation*/
+function add(a, b, c) {
+    return a + b + c
+}
+add(41, 51, 61)
+
+function curring(a) {
+    return function (b) {
+        return function (c) {
+            return a + b  + c
+        }
+    }
+}
+
+var result6 = curring(41)(51)(61)
+console.log(result6);//153
+
+//************************************ function composition ************************************
+//************************************ function composition ************************************
+
+/* akta function ar input akare arekta function daya */
+
+function print(inp) {
+    console.log(inp);
+}
+
+function multiplyByFive(n) {
+    return n * 5
+}
+
+function add(a, b) {
+    return a + b
+}
+
+print(multiplyByFive(add(5, 3)))//40
