@@ -5,17 +5,17 @@ function Shape () {
 
 }
 
-Shape.prototype = {
-    common: function () {
-        console.log('Im common method');
-    }
+Shape.prototype.common = function () {
+    console.log('Im common method');
 }
+
 //define a Square constructor or class
 function Square (width) {
     this.width = width
 }
 //prototypical inheritance
 Square.prototype = Object.create(Shape.prototype)
+Square.prototype.constructor = Square
 
 Square.prototype.draw = function () {
     console.log('Drawing');
@@ -33,6 +33,7 @@ function Circle () {
 }
 //prototypical inheritance
 Circle.prototype = Object.create(Shape.prototype)
+Circle.prototype.constructor = Circle
 
 var circle = new Circle()
 
