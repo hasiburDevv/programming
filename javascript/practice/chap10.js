@@ -157,3 +157,7 @@ for (var i of oopArr){
 circle instanceof Circle//true
 circle instanceof Square//false
 circle instanceof Shape//true
+
+//************************* inheritance and composition mixing ***************************
+//************************* inheritance and composition mixing ***************************
+
