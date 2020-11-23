@@ -32,9 +32,31 @@ console.log(map.get('b'));//20
 console.log(map.values());//[Map Iterator] { 10, 20, 25, 30 }
 console.log(map.keys());//[Map Iterator] { 'a', 'b', 'c', 'd' }
 
-//****************************** set ******************************
-//****************************** set ******************************
+//****************************** weak set ******************************
+//****************************** weak set ******************************
 
+let a = {
+    a: 10
+},
+b = {
+    b: 20
+}
+set = new Set ([a, b])
+a = null
+console.log(set);
+/*output:
+Set(2) {{…}, {…}}
+[[Entries]]
+0:
+value: {a: 10}
+1:
+value: {b: 20}
+*/
+// ************************ solution
 
+let x = {a: 10},y = {b: 20}
 
-
+let weakSet = new WeakSet([x, y])
+x = null
+console.log(weakSet);
+console.log(weakSet.has(x));

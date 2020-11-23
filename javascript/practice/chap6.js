@@ -65,3 +65,12 @@ function x() {// child can access parent scope
 }
 console.log(a);//abc
 x()
+
+
+
+
+
+
+
+
+

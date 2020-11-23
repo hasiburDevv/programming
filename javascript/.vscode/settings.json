@@ -1,3 +1,6 @@
 {
-    "cmake.configureOnOpen": false
+    "cmake.configureOnOpen": false,
+    "jumpToAliasFile.alias": {
+        "@": "c:\\Users\\Hasibur1\\Desktop\\prorgramming\\javascript\\src"
+    }
 }
